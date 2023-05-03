@@ -1,4 +1,9 @@
-  GNU nano 5.4                                                                               ownip.py                                                                                         
+import socket
+import netifaces
+
+def subnet_mask_to_cidr(netmask):
+        binary_str = ""
+        octets = netmask.split(".")
         for octet in octets:
                 binary_str += bin(int(octet))[2:].zfill(8)
 
@@ -38,8 +43,3 @@ octets = w_ip.split(".")
 octets[-1] = "0"
 
 w_ip = ".".join(octets)
-
-print("Lowest: ", w_ip)
-
-target = (str(w_ip) + "/" + str(cidr))
-print("Current Target:", target)
