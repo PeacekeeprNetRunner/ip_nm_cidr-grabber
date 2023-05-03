@@ -39,7 +39,8 @@ else:
         print("No WLAN Interface to pull from.")
 
 octets = w_ip.split(".")
-
 octets[-1] = "0"
-
 w_ip = ".".join(octets)
+
+target = (str(w_ip) + "/" + str(cidr))
+print(target)
